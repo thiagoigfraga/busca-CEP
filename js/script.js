@@ -13,9 +13,9 @@ function createLine(text) {
 
 function getCEP(event) {
   event.preventDefault();
-  var cep = campo.value;
+  let cep = campo.value;
   cep = cep.replace(' ', '').replace(".", '').replace('-', '').trim();
-  console.log(cep);
+  
   axios.get(`https://viacep.com.br/ws/${cep}/json/`)
 
     .then(function (response) {
@@ -37,7 +37,5 @@ function getCEP(event) {
     })
 
 }
-
-
 
 btn.addEventListener('click', getCEP);
